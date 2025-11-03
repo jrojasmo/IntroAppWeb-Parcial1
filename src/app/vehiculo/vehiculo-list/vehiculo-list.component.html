@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Lista de Vehículos</h2>
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th style="width: 15%">#</th>
+            <th style="width: 30%">Marca</th>
+            <th style="width: 30%">Línea</th>
+            <th style="width: 25%">Modelo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vehiculo of vehiculos; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ vehiculo.marca }}</td>
+            <td>{{ vehiculo.linea }}</td>
+            <td>{{ vehiculo.modelo }}</td>
+          </tr>
+        </tbody>
+        <tfoot class="table-info">
+          <tr *ngFor="let marca of getMarcas()">
+            <td>Total {{ marca }}:</td>
+            <td class="text-center">{{ getTotalPorMarca()[marca] }}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
